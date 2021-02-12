@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="menucardviewItem">
+        <item name="android:backgroundTint">#ffff</item>
+        <item name="cardCornerRadius">7dp</item>
+        <item name="android:layout_height">135dp</item>
+        <item name="android:layout_width">135dp</item>
+        <item name="cardElevation">12dp</item>
+        <item name="cardMaxElevation">10dp</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+</resources>

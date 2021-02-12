@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center_horizontal"
+        android:text="DETALLE PEDIDO"
+        android:textColor="#673AB7"
+        android:textStyle="bold"
+        android:textSize="20dp"
+
+        ></TextView>
+
+
+    <ListView
+        android:id="@+id/lsvSO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="12dp"
+        android:scrollbars="vertical">
+
+
+    </ListView>
+
+
+    <Button
+        android:id="@+id/btnconfirmarPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="CONFIRMAR PEDIDO"></Button>
+
+    <TextView
+        android:id="@+id/tvmuestra"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnconfirmarPedido"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="12dp"
+        android:text="muestra"></TextView>
+
+
+</LinearLayout>

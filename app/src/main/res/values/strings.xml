@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Restaurant_APP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">User</string>
+    <string name="password">Enter password</string>
+    <string name="textoBtnLogin">LOGIN</string>
+    <string name="textAgregarCuenta">Dont have an account?</string>
+    <string name="textCrear">Sign Up</string>
+    <string name="valtvIngrediente">nombre ingrediente</string>
+    <string name="valtvCantidad">cantidad</string>
+    <string name="valbtnAtras">atras</string>
+    <string name="valbtnAgregar">Agregar</string>
+    <string name="valtvReporteIngredientes">Reporte ingrediente</string>
+    <string name="valhintCantidad">ingrese cantidad</string>
+    <string name="valbtnGrabar">save</string>
+    <string name="valbtnActualizar">Actualizar</string>
+    <array name="ListaUser">
+
+        <item>SELECT USER:</item>
+        <item>ADMINISTRATOR</item>
+        <item>COOK</item>
+        <item>WAITER</item>
+
+    </array>
+
+    <string-array name="lugar">
+        <item>Seleccione una opción...</item>
+        <item>Terraza</item>
+        <item>Sala Principal</item>
+        <item>Sótano</item>
+    </string-array>
+
+
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_principal_cocinero">Principal_cocinero</string>
+    <string name="valtvMesaLugar">Lugar</string>
+    <string name="txtAgregarReceta">RECETARIO</string>
+    <string name="txtMisMesasAsignadas">MESAS ASIGNADAS</string>
+    <string name="txtExtrasEmpleados">EXTRAS</string>
+    <string name="insert_precio">"Enter price"</string>
+    <string name="insert_nombreProducto">Name of product</string>
+
+
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="100dp"
+        android:background="@color/purple_200"
+        android:backgroundTint="@color/purple_200">
+
+        <TextView
+            android:id="@+id/txtfecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="fecha"
+
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="15dp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="11dp"
+
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+
+                    >
+
+                    <TextView
+                        android:id="@+id/txtnropedido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nro pedido"
+
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#36558C"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+                    <!---         <TextView
+                                 android:id="@+id/txtfecha"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginStart="10dp"
+                                 android:text="fecha"
+
+                                 android:textAppearance="?attr/textAppearanceBody2"
+                                 android:textColor="?android:attr/textColorSecondary"
+                                 android:textSize="15dp" />
+
+                                 -->
+
+                    <TextView
+                        android:id="@+id/txthora"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="hora"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtmesa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="texto secundario"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/purple_500"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtdescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Esta es una descrpipcion del pedido"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/btnVerpedido"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#8BC34A"
+                    android:text="Ver pedido"
+                    android:textColor="@color/white"
+                    app:backgroundTint="#8BC34A" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+
+
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/iconpedido"></ImageView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

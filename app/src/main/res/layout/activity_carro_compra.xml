@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarroCompra">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaCarro"
+        android:layout_width="match_parent"
+        android:layout_height="453dp"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="458dp"
+        android:background="@color/purple_500"
+        android:backgroundTint="@color/purple_500"></View>
+
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center_horizontal"
+        android:text="0.0"
+        android:textColor="@color/purple_500"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:gravity="center_horizontal"
+        android:text="Total a pagar :"
+        android:textColor="@color/purple_500"></TextView>
+
+
+    <Button
+
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btxseguircomprando"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_style"
+        android:text="Seguir comprando"
+
+        android:textColor="#ffff"></Button>
+
+
+    <Button
+        android:id="@+id/btxconfirmarPedido"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="124dp"
+
+        android:background="@drawable/btn_style"
+        android:text="confirmar pedido"
+        android:textColor="#ffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</RelativeLayout>

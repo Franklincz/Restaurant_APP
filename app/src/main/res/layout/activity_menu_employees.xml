@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dondocinco"
+    android:orientation="vertical"
+    tools:context=".Menu_employees">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="Hello Jean , Welcome to you restaurant"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardGenerarComanda"
+                style="@style/menucardviewItem">
+
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_guion"
+
+
+                    ></ImageView>
+
+                <TextView
+
+                    android:id="@+id/textView9"
+                    style="@style/TextosItemMenus"
+                    android:text="Comanda" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="40dp"></Space>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardMesas1"
+                style="@style/menucardviewItem"
+
+                >
+
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cena"
+
+                    ></ImageView>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/TextosItemMenus"
+                    android:text="Mesas" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardMesaAsignada"
+                style="@style/menucardviewItem"
+
+                app:cardCornerRadius="5dp"
+
+                >
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mesero"
+
+                    ></ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView12"
+
+                    style="@style/TextosItemMenus"
+                    android:text="@string/txtMisMesasAsignadas" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="40dp"></Space>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardPlatillo"
+                style="@style/menucardviewItem"
+
+                tools:ignore="MissingConstraints">
+
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/ic_camarero"></ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView13"
+                    style="@style/TextosItemMenus"
+                    android:text="PLATILLO" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardAgregarRecet"
+                style="@style/menucardviewItem">
+
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_receta"></ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/TextosItemMenus"
+                    android:text="@string/txtAgregarReceta" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="40dp"></Space>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CardExtras"
+
+                style="@style/menucardviewItem">
+
+
+                <ImageView
+                    style="@style/IMAGESicons"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_grafico"
+
+                    ></ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/TextosItemMenus"
+
+
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtExtrasEmpleados" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Cardcerrarsesionempleoye"
+                style="@style/menucardviewItem">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    style="@style/TextosItemMenus"
+                    android:text="CERRAR SESIÓN" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
