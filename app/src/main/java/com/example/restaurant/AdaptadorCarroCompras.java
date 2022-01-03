@@ -22,12 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCompras.ProductosViewHolder> {
-    public int cantidadDeProducto = 0;
+    int cantidadDeProductoAumenta = 1;
+   ArayProductos arayProductos= new ArayProductos();
     Context context;
     List<Producto> carroCompra;
     List<Producto> carroCompraenviar;
     Pedido ListaConfirmadaPedido;
-    ArrayList<ArayProductos> ListaConfirmadaProductos = new ArrayList<>();
+    List<ArayProductos> ListaConfirmadaProductos = new ArrayList<>();
     TextView tvTotal;
     double total = 0;
 
@@ -38,9 +39,9 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
     Button seguirconmprando, btncomprar;
 
     public AdaptadorCarroCompras(Context context, List<Producto> carroCompra, TextView tvTotal,
-                                 Button btncomprar, Button seguirconmprando, DatabaseReference db) {
+                                 Button btncomprar, Button seguirconmprando, DatabaseReference db,List<ArayProductos>lista) {
         this.context = context;
-
+        this.ListaConfirmadaProductos=lista;
         this.carroCompra = carroCompra;
         this.db = db;
         this.tvTotal = tvTotal;
@@ -67,6 +68,7 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
     @Override
     public void onBindViewHolder(@NonNull final ProductosViewHolder productosViewHolder, final int i) {
 
+
         productosViewHolder.edtcant.setText("" + 1);
 
         productosViewHolder.tvNomProducto.setText(carroCompra.get(i).getNombre());
@@ -81,7 +83,7 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
                 total = Double.valueOf(formato1.format((total - (carroCompra.get(i).getPrecio()))));
 
 
-                carroCompra.remove(i);
+                carroCompra.remove(i);//para eliminar un elemento en la posicion i
 
                 notifyDataSetChanged();
 
@@ -100,16 +102,19 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
         btncomprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ListaConfirmadaProductos.clear();
+          /*      ListaConfirmadaProductos.clear();
 
-
-                for (int i = 0; i < carroCompraenviar.size(); i++) {
-                    ListaConfirmadaProductos.add(new ArayProductos(carroCompraenviar.get(i), "3"));
+                // cantidad de productos
+                //
+                //String canti= ;
+               for (int i = 0; i < carroCompraenviar.size(); i++) {
+                    ListaConfirmadaProductos.add(arayProductos );
 
                 }
-
-                ListaConfirmadaPedido = new Pedido("mesa 12", ListaConfirmadaProductos);
+*/
+                //ListaConfirmadaPedido = new Pedido("mesa 12", ListaConfirmadaProductos);
                 db.push().setValue(ListaConfirmadaPedido);
+
 
 
             }
@@ -132,24 +137,54 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
         productosViewHolder.btnAumentarProd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cantidadDeProducto = 0;
-                cantidadDeProducto = cantidadDeProducto + 1;
 
-                productosViewHolder.edtcant.setText("" + cantidadDeProducto);
+                // cantidadDeProductoAumenta = 0;
+                cantidadDeProductoAumenta = cantidadDeProductoAumenta + 1;
+
+
+                //    productosViewHolder.edtcant.setText("" + cantidadDeProductoAumenta);
+                Toast.makeText(context
+                        , "itemvvvvv" + i, Toast.LENGTH_SHORT).show();
+
+
+                //
+
+                int count = Integer.parseInt(String.valueOf(productosViewHolder.edtcant.getText()));
+                count++;
+                productosViewHolder.edtcant.setText("" + count);
+
+
+
+                ListaConfirmadaProductos.set(i,new ArayProductos(carroCompraenviar.get(i), String.valueOf(count)));
+
 
 
             }
+
         });
         productosViewHolder.btnDismiProd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                cantidadDeProducto = 0;
+                //cantidadDeProducto = 0;
+
+                int count = Integer.parseInt(String.valueOf(productosViewHolder.edtcant.getText()));
+
+                if (count == 1)
+                    productosViewHolder.edtcant.setText("1");
+                else
+                    count -= 1;
+                productosViewHolder.edtcant.setText("" + count);
+
+                //cantidadDeProducto = cantidadDeProducto - 1;
+                //productosViewHolder.edtcant.setText("" + cantidadDeProducto);
+
+
+                //CardInterface.changeQuantity(productosViewHolder.getAdapterPosition(), String.valueOf(count));
 
 
 
-                cantidadDeProducto = cantidadDeProducto - 1;
-                productosViewHolder.edtcant.setText("" + cantidadDeProducto);
+                arayProductos.setCantidad(String.valueOf(count));
             }
         });
 
@@ -161,6 +196,12 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
         return carroCompra.size();
     }
 
+
+
+
+
+
+    
     public class ProductosViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvNomProducto, tvDescripcion, tvPrecio;
@@ -180,5 +221,16 @@ public class AdaptadorCarroCompras extends RecyclerView.Adapter<AdaptadorCarroCo
 
 
         }
+
+
     }
-}
+
+
+
+
+
+
+
+
+
+    }

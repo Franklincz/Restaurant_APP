@@ -27,6 +27,7 @@ public class ProductosELEGIR extends AppCompatActivity {
     RecyclerView rvListaProductos;
     AdaptadorProductos adaptador;
     List<Producto> listaProductos;
+    List<ArayProductos> lista;
     List<Producto> carroCompras = new ArrayList<>();
     List<Producto> carroComprasquesetrae;
     private DatabaseReference db2;
@@ -67,7 +68,7 @@ public class ProductosELEGIR extends AppCompatActivity {
         }
         obtenerProducts();
 
-        adaptador = new AdaptadorProductos(getApplicationContext(), tvCantProductos, btnVerCarro, listaProductos, carroCompras, carroComprasquesetrae);
+        adaptador = new AdaptadorProductos(getApplicationContext(), tvCantProductos, btnVerCarro, listaProductos, carroCompras, carroComprasquesetrae,lista);
         rvListaProductos.setAdapter(adaptador);
 
 

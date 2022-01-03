@@ -27,6 +27,7 @@ import java.util.List;
 
 public class CarroCompra extends AppCompatActivity {
 
+    List<ArayProductos>listaCompras;
     List<Producto> carroCompras;
     AdaptadorCarroCompras adaptador;
     ProductosELEGIR p;
@@ -51,11 +52,12 @@ public class CarroCompra extends AppCompatActivity {
         seguircomprando = (Button) findViewById(R.id.btxseguircomprando);
 
         carroCompras = (List<Producto>) getIntent().getSerializableExtra("CarroCompras");
+        listaCompras = (List<ArayProductos>) getIntent().getSerializableExtra("Aray");
         rvListaCarro.setLayoutManager(new GridLayoutManager(CarroCompra.this, 1));
         db3 = (DatabaseReference) FirebaseDatabase.getInstance().getReference().child(FirebaseReference.PEDIDOS_REFERENCE);
 
 
-        adaptador = new AdaptadorCarroCompras(this, carroCompras, tvTotal, btconfirmarCompra, seguircomprando, db3);
+        adaptador = new AdaptadorCarroCompras(this, carroCompras, tvTotal, btconfirmarCompra, seguircomprando, db3,listaCompras);
         rvListaCarro.setAdapter(adaptador);
 
         //   rvListaCarro.setAdapter(adaptador);
@@ -86,7 +88,7 @@ public class CarroCompra extends AppCompatActivity {
     public void onBackPressed() {
 
 
-        Toast.makeText(getApplicationContext(), "mariconcitoooooo", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "mar", Toast.LENGTH_SHORT).show();
 
 
         Intent intent = new Intent(getApplicationContext(), ProductosELEGIR.class);

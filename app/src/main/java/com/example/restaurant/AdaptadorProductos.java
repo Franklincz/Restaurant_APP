@@ -27,16 +27,18 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
     TextView tvCantProductos;
     Button btnVerCarro;
     List<Producto> listaProductos;
+    List<ArayProductos> listaAray;
     List<Producto> carroCompra;
     List<Pedido> listaPedidos;
     List<Producto> carroComprasquesetrae;
 
     public AdaptadorProductos(Context context, TextView tvCantProductos, Button btnVerCarro, List<Producto> listaProductos,
-                              List<Producto> carroCompra, List<Producto> carroComprasquesetrae) {
+                              List<Producto> carroCompra, List<Producto> carroComprasquesetrae , List<ArayProductos> lista) {
         this.context = context;
         this.tvCantProductos = tvCantProductos;
         this.btnVerCarro = btnVerCarro;
         this.listaProductos = listaProductos;
+        this.listaAray=lista;
         this.carroCompra = carroCompra;
         this.carroComprasquesetrae = carroComprasquesetrae;
 
@@ -61,7 +63,8 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ProductosViewHolder productosViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final ProductosViewHolder productosViewHolder, final int i) {//coloca los elementos osea los carga
+
         productosViewHolder.tvNomProducto.setText(listaProductos.get(i).getNombre());
         productosViewHolder.tvDescripcion.setText(listaProductos.get(i).getNombre());
         productosViewHolder.tvPrecio.setText("S/ " + listaProductos.get(i).getPrecio());
@@ -96,8 +99,10 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
                 if (cantidadEligiendo >= 0) {
                     tvCantProductos.setText("" + (Integer.parseInt(tvCantProductos.getText().toString().trim()) + 1));
                     carroCompra.add(listaProductos.get(i));
+                   // listaAray.add(i,new ArayProductos(carroCompra.get(i), "1"));
                     cantidadEligiendo++;
                 }
+                listaAray.add(i,new ArayProductos(carroCompra.get(i), "1"));
 
 
             }
@@ -111,6 +116,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
                 Intent intent = new Intent(context, CarroCompra.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("CarroCompras", (Serializable) carroCompra);
+                intent.putExtra("Aray", (Serializable) listaAray);
                 context.startActivity(intent);
 
             }

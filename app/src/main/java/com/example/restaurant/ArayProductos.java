@@ -19,7 +19,6 @@ public class ArayProductos {
 
 
 
-
     public int getTotalProducts() {
         return totalProducts;
     }
